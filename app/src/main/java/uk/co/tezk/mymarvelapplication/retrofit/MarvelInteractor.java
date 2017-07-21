@@ -27,25 +27,6 @@ public class MarvelInteractor {
 
         final Flowable<MarvelResponse> response = mApi.getComics(PUBLIC_API_KEY, TIME_STAMP, hash, NUM_COMICS);
 
-     /*   Flowable<Result> resultFlowable = Flowable.create(new FlowableOnSubscribe<Result>() {
-            @Override
-            public void subscribe(final FlowableEmitter<Result> e) throws Exception {
-
-                response
-                        .subscribeOn(Schedulers.io())
-                        .flatMap(new Function<MarvelResponse, Publisher<Result>>() {
-                            @Override
-                            public Publisher<Result> apply(MarvelResponse marvelResponse) throws Exception {
-                                List<Result> results = marvelResponse.getData().getResults();
-                                for (Result eachResult : results) {
-                                    e.onNext(eachResult);
-                                }
-                            }
-                        });
-            }
-        }, BackpressureStrategy.DROP);
-
-*/
         return response;
     }
 

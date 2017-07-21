@@ -42,6 +42,8 @@ public class ComicPresenterImpl implements IComicPresenter.IPresenter {
         mMarvelInteractor.getComicList()
                 .subscribeOn(mSchedulerProvider.provideSubscribeScheduler())
                 .observeOn(mSchedulerProvider.provideObserveScheduler())
+                // Not the best way as this processes on the UI thread. Would prefer to flatMap to release the elements
+                // then perform the mapping there
                 .subscribe(new Consumer<MarvelResponse>() {
                                @Override
                                public void accept(MarvelResponse marvelResponse) throws Exception {
