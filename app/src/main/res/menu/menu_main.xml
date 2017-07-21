@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="uk.co.tezk.mymarvelapplication.MainActivity">
+    <item
+        android:id="@+id/action_set_budget"
+        android:orderInCategory="100"
+        android:title="Set budget"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_clear_budget"
+        android:orderInCategory="100"
+        android:title="Clear budget"
+        app:showAsAction="never" />
+</menu>
